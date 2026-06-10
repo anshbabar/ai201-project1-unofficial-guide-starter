@@ -169,7 +169,7 @@ def print_result(question, result):
 
 if __name__ == "__main__":
     test_question = (
-        "What is UCSD's current acceptance rate?"
+        "Is it easy to make friends and have a social life at UCSD?"
     )
 
     result = ask(test_question)

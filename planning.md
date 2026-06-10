@@ -80,7 +80,7 @@ This information is valuable because official websites explain programs and serv
 | 2 | Is it easy to make friends and have a social life at UCSD? | Opinions are mixed. Some students describe UCSD as socially quiet or reserved, while others say friendships can be developed by joining clubs, talking to classmates, and making an active effort. |
 | 3 | What role do clubs play in student life at UCSD? | Students describe clubs as varied and important for meeting people, finding shared interests, and participating in campus activities. Clubs appear to be a major part of UCSD’s social life. |
 | 4 | How do students describe the food at UCSD? | Opinions are mixed. Some students describe the food as decent, delicious, and varied, while others consider it one of the weaker parts of the UCSD experience. |
-| 5 | What do students like about UCSD’s location and campus environment? | Students consistently praise UCSD’s scenery, beach access, campus beauty, and location in San Diego. Some reviews mention limited gathering spaces, but the overall opinion of the location is strongly positive. |
+| 5 | What specific problems do students report about UCSD's internet quality and campus gathering spaces? | One student reports extremely unstable internet at Eighth College, including major latency spikes. Another student says UCSD lacks gathering spaces and social cohesion, although small groups can still thrive. The reviews provide limited evidence, so the answer should not make a campus-wide conclusion. |
 
 ---
 
