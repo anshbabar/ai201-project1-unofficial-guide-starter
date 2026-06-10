@@ -127,17 +127,19 @@ def load_documents(directory_path: str | Path) -> list[dict[str, Any]]:
     return documents
 
 
-def create_chunks(documents: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def create_chunks(documents):
     """
     Create one complete chunk for each student review.
 
-    The current reviews are short enough to remain whole, so overlap is not
-    needed. Each chunk keeps its ratings and source metadata.
+    The searchable chunk includes the written review and category ratings
+    so queries about topics such as food, clubs, or social life have more
+    information available during semantic retrieval.
     """
-    chunks: list[dict[str, Any]] = []
+    chunks = []
 
     for document in documents:
         metadata = document["metadata"]
+        ratings = document["ratings"]
         review_text = document["review_text"]
 
         if not review_text.strip():
@@ -145,12 +147,23 @@ def create_chunks(documents: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
         source_stem = Path(metadata["source"]).stem
 
+        ratings_text = ". ".join(
+            f"{category.title()} rating: {value}"
+            for category, value in ratings.items()
+        )
+
+        searchable_text = (
+            f"Student review of UC San Diego. "
+            f"{ratings_text}. "
+            f"Written review: {review_text}"
+        )
+
         chunk = {
             "id": f"{source_stem}_chunk_0",
-            "text": review_text,
+            "text": searchable_text,
             "metadata": {
                 **metadata,
-                "ratings": document["ratings"],
+                "ratings": ratings,
                 "chunk_index": 0,
             },
         }
@@ -158,6 +171,7 @@ def create_chunks(documents: list[dict[str, Any]]) -> list[dict[str, Any]]:
         chunks.append(chunk)
 
     return chunks
+
 
 
 def print_chunk(chunk: dict[str, Any]) -> None:
